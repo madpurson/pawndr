@@ -1,5 +1,5 @@
 # Use an official PHP image with Apache
-FROM php:8.2-apache
+FROM php:7.4-apache
 
 # Enable Apache mod_rewrite for CodeIgniter
 RUN a2enmod rewrite
@@ -9,6 +9,9 @@ WORKDIR /var/www/html
 
 # Copy project files into the container
 COPY . /var/www/html
+
+# Copy custom Apache site config
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Install necessary PHP extensions
 RUN docker-php-ext-install mysqli
