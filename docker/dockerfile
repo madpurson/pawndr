@@ -10,6 +10,9 @@ WORKDIR /var/www/html
 # Copy project files into the container
 COPY . /var/www/html
 
+# Copy custom Apache site config
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
 # Install necessary PHP extensions
 RUN docker-php-ext-install mysqli
 
