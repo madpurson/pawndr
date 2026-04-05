@@ -12,13 +12,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->load->view('animals', $data);
         }
    
-    //     public function view($id) {
-    //         $data['animal'] = $this->Animal_model->get_animal($id);
-    //         if (empty($data['animal'])) {
-    //             show_404();
-    //         }
-    //         $this->load->view('animals/view', $data);
-    //     }
+        public function view($id) {
+            $data['animal'] = $this->Animal_model->get_animal($id);
+            if (empty($data['animal'])) {
+                show_404();
+            }
+            $this->load->view('animals/view', $data);
+        }
 
     //     public function create() {
     //         if ($this->input->post()) {
